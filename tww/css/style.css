@@ -1,0 +1,310 @@
+/* Set the font as Garamond */
+* { font-family: Garamond, Geneva, sans-serif; }
+
+/* Background pattern from Toptal Subtle Patterns: https://www.toptal.com/designers/subtlepatterns/black-felt/ */
+.black_felt {
+	background-image: url("../img/zwartevilt_@2X.jpg");
+}
+
+/* Background pattern from Toptal Subtle Patterns: https://www.toptal.com/designers/subtlepatterns/black-paper/ */
+.black_paper {
+	background-image: url("../img/black_paper_@2X_reworked.jpg");
+	color: #fffbe8;
+	border-style: ridge; /* makes it look 3D */
+	border-width: medium;
+	border-color: grey;
+	padding: 2.5px 20px;
+	margin: 10px;
+}
+
+.container-centred {
+	display: flex;
+	justify-content: center;
+}
+
+.container-space-around {
+	display: flex;
+	justify-content: space-around;
+}
+
+.centredText {
+	text-align: center;
+}
+
+.font18 {
+	font-size: 18px;
+}
+
+html {
+	background-image: url("../img/zwartevilt_@2X.jpg");
+}
+
+#factionsTablesGenerator {
+	justify-content: center;
+	padding: 5px 20px;
+}
+
+#toggleFactionsTablesButton {
+	width: 200px;
+}
+
+#factionsTablesOptions {
+	display: none;
+}
+
+#factionsTablesHolder {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.checkButton {
+	width: 200px;
+}
+
+table {
+	margin: 10px 5px;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	border-style: ridge;
+	border-width: medium;
+	border-color: grey;
+	text-align: left;
+}
+
+th, td {
+	margin: 0;
+	padding: 5px 20px;
+	background-color: #171818;
+}
+
+#nbFactionsPresenter{
+	border-style: ridge;
+	border-width: medium;
+	border-color: grey;
+	border-right: none;
+	padding: 2px 0px;
+	padding-bottom: 4px;
+	background-color: #292a2a;
+	margin-bottom: 3px;
+}
+
+#nbFactionsSelected{
+	margin: 0;
+	padding: 2px 22px;
+	text-align: center;
+}
+
+.nbFactionButton {
+	width: 27.5px;
+	height: 27.5px;
+	/* Centring the text compared to the button*/
+	padding: 0px;
+	font-weight: bold;
+	margin: 0;
+	border-radius: 0;
+}
+.nbFactionButton::before {
+	border-radius: 0;
+}
+
+#nbFactionsNumberHolder{
+	display: none;
+}
+
+.nbFactionsNumberDiv{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.nbFactionsNumberSpan{
+	cursor: pointer;
+	background-color: #292a2a;
+	padding: 2px 22px;
+
+}
+.nbFactionsNumberSpan:hover{
+	background-color: #3a3b3b;
+}
+
+#mapsGeneratorOptionsHolder {
+	display: flex;
+	flex-direction: column;
+}
+
+#generate {
+	padding: 5px 20px;
+}
+
+.reloadButton {
+	width: 30px;
+	height: 30px;
+	/* Centring the text compared to the button*/
+	padding: 0px;
+	font-weight: bold;
+	margin: 0;
+}
+
+footer {
+	background-color: rgba(0,0,0,0.5);
+	color: lightgray;
+	margin: 10px;
+	padding: 2.5px 20px;
+	font-size: 12px;
+}
+
+a {
+	color: lightgray;
+}
+
+/*-----------------------------------------------
+-                 Media Queries                 -
+-----------------------------------------------*/
+
+@media(max-width: 768px){
+	#generatorOptionsHolder {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#resultsHolder {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#mapsResultsHolder {
+		margin-top: 20px;
+	}
+}
+
+/*-----------------------------------------------
+-      Making the pretty TWW2-like buttons      -
+-----------------------------------------------*/
+
+/* General bits about buttons */
+button {
+	cursor: pointer;
+    color: white; /* Colour of the text */
+    padding: 10px;
+    border-style: ridge;
+    border-width: medium;
+    border-color: grey;
+	/*Put the witdh, height, and font size in individual buttons instead of a general one here*/
+	/*width: 250px;
+	height: auto;
+	font-size: 24px;*/
+}
+
+/* How to make the gradient style buttons with a hover */
+button {
+	/* Real button */
+	position: relative; /* button::before is relative to button */
+	border-radius: 10px; /* round the edges */
+	/* make a linear gradiant towards the bottom */
+	background-image: linear-gradient(
+	    to bottom, #314755 0%, #314755 33%, #26a0da 100%
+	);
+	z-index: 0;
+}
+button::before {
+    position: absolute; /* button::before is relative to button */
+    border-radius: 10px;
+    content: ""; /* empty the content */
+	/* Position it as overlapping on the button */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	/* make a linear gradiant towards the top that will appear when it is hovered over */
+    background-image: linear-gradient(
+    to top, #314755 0%, #314755 33%, #26a0da 100%
+    );
+    z-index: -1; /* Set it below the button */
+    transition: opacity 0.2s linear; /* set the speed at which it becomes opaque */
+    opacity: 0; /* Make it completly transparent to start with */
+}
+/* When the button::before is hovered, increase its opacity up to 1 */
+button:hover::before {
+  opacity: 1;
+}
+
+/*-----------------------------------------------
+-         Making the pretty checkboxes          -
+-----------------------------------------------*/
+
+/* Customize the label (the container) */
+.checkbox-container {
+ display: block;
+ position: relative;
+ padding-left: 35px;
+ /*
+ margin-bottom: 12px;
+ */
+ cursor: pointer;
+ font-size: 18px;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+ /* Centring the text compared to the checkbox*/
+ line-height: 1.50;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 20px;
+ width: 20px;
+ background-color: #292a2a;
+ border-style: ridge; /* makes it look 3D */
+ border-width: medium;
+ border-color: grey;
+}
+
+/* On mouse-over, add a  background color */
+.checkbox-container:hover input ~ .checkmark {
+ background-color: #3a3b3b;
+}
+
+/* When the checkbox is checked, add a  background color */
+.checkbox-container input:checked ~ .checkmark {
+ background-color: #292a2a;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+ content: "";
+ position: absolute;
+ display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+ display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+ left: 6px;
+ top: 2.5px;
+ width: 5px;
+ height: 10px;
+ border: Ridge grey;
+ border-width: 0 3px 3px 0;
+ -webkit-transform: rotate(45deg);
+ -ms-transform: rotate(45deg);
+ transform: rotate(45deg);
+}
