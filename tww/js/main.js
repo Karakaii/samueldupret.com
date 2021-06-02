@@ -10,7 +10,11 @@ factionsData.TWW1 = {
 };
 factionsData.TWW2 = {
     description: "Total War Warhammer II",
-    factions: ["Dark Elves", "The Blessed Dread", "Cult Of Pleasure", "High Elves", "Order Of Loremasters", "Nagarythe", "Lizardmen", "Last Defenders", "Itza", "Tlaqua", "Skaven", "Clan Pestilens", "Clan Rictus", "Karak Kadrin", "The Golden Order", "Middenland", "Mousillon", "The Barrow Legion", "Chevaliers De Lyonesse", "The Knights Of Caledor", "Bonerattlaz", "The Thousand Maws"]
+    factions: ["Dark Elves", "The Blessed Dread", "Cult Of Pleasure", "High Elves", "Order Of Loremasters", "Nagarythe", "Lizardmen", "Last Defenders", "Itza", "Tlaqua", "Skaven", "Clan Pestilens", "Clan Rictus", "Chevaliers De Lyonesse", "The Knights Of Caledor", "The Thousand Maws"]
+};
+factionsData.mortalEmpire = {
+    description: "Mortal Empire",
+    factions: ["Karak Kadrin", "The Golden Order", "Middenland", "Mousillon", "The Barrow Legion", "Bonerattlaz"]
 };
 factionsData.chaosWarriors = {
     description: "Chaos Warriors",
