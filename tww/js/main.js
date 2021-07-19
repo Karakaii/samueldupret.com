@@ -426,7 +426,7 @@ function getMaps() {
 
             // Get the maps under that type of header
             mapNames[mapHeader].forEach(mapName => {
-                maps.push(`${mapHeader}: ${mapName[i]}`)
+                maps.push(`${mapHeader}: ${mapName}`)
             })
         }
     })
