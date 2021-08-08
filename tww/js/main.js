@@ -394,7 +394,7 @@ function generateMap() {
 
     // If there is no map, warn user
     if (allMaps.length == 0) {
-        alert("You need to select at least maps types to randomly choose from.")
+        alert("You need to select at least map types to randomly choose from.")
 
         // And stop function
         return false
