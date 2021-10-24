@@ -298,10 +298,12 @@ function reloadFaction(currentButton) {
 
     // Get all the faction name spans and extract all the faction names from them into an array
     let allFactionNameSpans = $(".factionNameSpan")
+    allFactionNameSpans = Object.keys(allFactionNameSpans).map(key => allFactionNameSpans[key]).filter(span => span.textContent)
+
     let currentFactionNames = []
 
     allFactionNameSpans.forEach((span, i) => {
-        let text = span.innerText
+        let text = span.textContent
         let textNumber = i + 1
         let factionName = text.replace(`${textNumber}. `, "")
         currentFactionNames.push(factionName)
