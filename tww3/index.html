@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TWW3 Random Faction Generator</title>
+
+    <!-- link to css stylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+
+    <!-- link to jQuery -->
+    <script src="../src/jQuery/jQuery.js"></script>
+
+    <!-- link to fontawesome symbols -->
+    <script src="https://kit.fontawesome.com/d3917bc0bb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="black_paper container-centred " id="factionsTablesGenerator">
+        <button class="font18" id="toggleFactionsTablesButton" onclick="toggleFactionsTables();">Show Faction
+            Options</button>
+    </div>
+
+    <div class="black_paper" id="factionsTablesOptions">
+        <br>
+        <div id="checkButtonsHolder" class="container-centred">
+            <button class="checkButton font18" onclick="checkAll(false);">Uncheck all factions</button>
+            &emsp;
+            <button class="checkButton font18" onclick="checkAll(true);">Check all factions</button>
+        </div>
+        <br>
+        <div id="factionsTablesHolder"></div>
+        <br>
+    </div>
+
+    <div class="black_paper" id="generatorOptions">
+        <p class="centredText font18">GENERATOR OPTIONS</p>
+
+        <div class="container-space-around" id="generatorOptionsHolder">
+            <div id="factionsGeneratorOptionsHolder">
+
+                <span class="font18">How many factions do you wish to generate?</span>
+                <br><br>
+                <span id="nbFactionsPresenter">
+                    <span id="nbFactionsSelected">1</span>
+                    <button class="nbFactionButton" onclick="toggleNbFactionsNumbers();">
+                        <i class="fas fa-angle-down"></i>
+                    </button>
+                </span>
+                <div id="nbFactionsNumberHolder">
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">1</span></div>
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">2</span></div>
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">3</span></div>
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">4</span></div>
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">5</span></div>
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">6</span></div>
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">7</span></div>
+                    <div class="nbFactionsNumberDiv"><span class="nbFactionsNumberSpan">8</span></div>
+                </div>
+
+                <br><br>
+
+                <label class="checkbox-container">Forbid faction doubles?
+                    <input id="factionForbidCheckbox" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+
+            </div>
+
+        </div>
+
+        <br>
+
+    </div>
+
+    <div class="black_paper" id="results">
+        <div class="container-centred" id="generate">
+            <button class="font18" onclick="generateAll();">Generate</button>
+        </div>
+        <br>
+
+        <div class="container-space-around" id="resultsHolder">
+            <div id="factionsResultsHolder">
+                <span class="font18">Your faction(s) are:</span>
+                <div id="showFactionsResult"></div>
+            </div>
+        </div>
+
+        <br>
+
+    </div>
+
+    <footer>
+        <p>This is an unofficial faction and map random generator for the Total War: Warhammer games franchise. No
+            revenue or data is obtained because of this site. All rights belong to respective owners at Game Workshop,
+            Creative Assembly, and SEGA.</p>
+
+        <p>For the background images please see Toptal Subtle Patterns for <a
+                href="https://www.toptal.com/designers/subtlepatterns/black-felt/" target="_blank">Black Felt</a> and <a
+                href="https://www.toptal.com/designers/subtlepatterns/black-paper/" target="_blank">Black Paper</a>
+        </p>
+
+        <p>If you want a faction and lord generator for your campaigns, here is a good site that inspired me in the
+            making of mine: <a href="https://project-pc.com/Total-War-Warhammer-Faction-Picker"
+                target="_blank">https://project-pc.com/Total-War-Warhammer-Faction-Picker</a>
+        </p>
+
+        <p>Thank you to Arthur, Adrien, j_mfo, and Project PC for their help.</p>
+    </footer>
+
+    <!-- Access JS scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

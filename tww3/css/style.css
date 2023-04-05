@@ -54,6 +54,7 @@ html {
 
 #factionsTablesHolder {
 	display: flex;
+	justify-content: center;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
@@ -180,7 +181,7 @@ a {
 }
 
 /*-----------------------------------------------
--      Making the pretty TWW2-like buttons      -
+-      Making the pretty TWW3-like buttons      -
 -----------------------------------------------*/
 
 /* General bits about buttons */
@@ -204,7 +205,7 @@ button {
 	border-radius: 10px; /* round the edges */
 	/* make a linear gradiant towards the bottom */
 	background-image: linear-gradient(
-	    to bottom, #314755 0%, #314755 33%, #26a0da 100%
+	    to bottom, #3E161A 0%, #7e1520 33%, #f00d24 100%
 	);
 	z-index: 0;
 }
@@ -219,7 +220,7 @@ button::before {
     left: 0;
 	/* make a linear gradiant towards the top that will appear when it is hovered over */
     background-image: linear-gradient(
-    to top, #314755 0%, #314755 33%, #26a0da 100%
+    to top, #3E161A 0%, #7e1520 33%, #f00d24 100%
     );
     z-index: -1; /* Set it below the button */
     transition: opacity 0.2s linear; /* set the speed at which it becomes opaque */
@@ -307,56 +308,4 @@ button:hover::before {
  -webkit-transform: rotate(45deg);
  -ms-transform: rotate(45deg);
  transform: rotate(45deg);
-}
-
-/*-----------------------------------------------
--      Making the pretty TWW3-like link      -
------------------------------------------------*/
-
-/* General bits about buttons */
-.TWW3-link {
-	cursor: pointer;
-    color: white; /* Colour of the text */
-    padding: 10px;
-    border-style: ridge;
-    border-width: medium;
-    border-color: grey;
-	text-decoration: none;
-	/*Put the witdh, height, and font size in individual buttons instead of a general one here*/
-	/*width: 250px;
-	height: auto;
-	font-size: 24px;*/
-}
-
-/* How to make the gradient style buttons with a hover */
-.TWW3-link {
-	/* Real button */
-	position: relative; /* button::before is relative to button */
-	border-radius: 10px; /* round the edges */
-	/* make a linear gradiant towards the bottom */
-	background-image: linear-gradient(
-	    to bottom, #3E161A 0%, #7e1520 33%, #f00d24 100%
-	);
-	z-index: 0;
-}
-.TWW3-link::before {
-    position: absolute; /* button::before is relative to button */
-    border-radius: 10px;
-    content: ""; /* empty the content */
-	/* Position it as overlapping on the button */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-	/* make a linear gradiant towards the top that will appear when it is hovered over */
-    background-image: linear-gradient(
-    to top, #3E161A 0%, #7e1520 33%, #f00d24 100%
-    );
-    z-index: -1; /* Set it below the button */
-    transition: opacity 0.2s linear; /* set the speed at which it becomes opaque */
-    opacity: 0; /* Make it completly transparent to start with */
-}
-/* When the button::before is hovered, increase its opacity up to 1 */
-.TWW3-link:hover::before {
-  opacity: 1;
 }
